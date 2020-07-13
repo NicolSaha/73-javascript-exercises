@@ -9,14 +9,28 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
-    
-    // to get the value of an input: document.getElementById("element-id").value
+(function () {
+  // to get the value of an input: document.getElementById("element-id").value
 
-    document.getElementById("run").addEventListener("click", function() {
+  document.getElementById("run").addEventListener("click", function () {
+    // your code here
 
-        // your code here
+    function factorial(n) {
+      if (n == 0 || n == 1) {
+        return 1;
+      } else if (n < 0) {
+        return "oops, dividing by zero is undefined";
+      } else {
+        return factorial(n - 1) * n;
+      }
+    }
 
-    });
+    let input = document.getElementById("number");
+    let value = input.value;
 
+    let output = factorial(value);
+    input.value = output;
+
+    alert(`The factorial is: ${output}`);
+  });
 })();
