@@ -14,7 +14,7 @@
 
   n = 100;
   for (i = 1; i <= n; i + 1) {
-    if (i % 3 === 0 && i % 5 === 0) {
+    if (i % 15 === 0) {
       console.log(i + " fizzbuzz");
       i++;
     } else if (i % 3 === 0) {
