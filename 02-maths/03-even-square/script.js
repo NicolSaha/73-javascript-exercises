@@ -9,12 +9,21 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  document.getElementById("run").addEventListener("click", function () {
+    var output = "Result is";
 
-    document.getElementById("run").addEventListener("click", function() {
+    var n = 21;
 
-        // your code here
+    if (n != null && n > 0) {
+      var i = 0;
 
-    });
-
+      alert("The first " + n + " numbers and their squares are:");
+      for (i = 1; i <= n; i++)
+        output += "\n" + i + "*" + i + "=" + i * i + "\n";
+      alert(output);
+    } else {
+      alert("Try again");
+    }
+  });
 })();

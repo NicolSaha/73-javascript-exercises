@@ -10,16 +10,43 @@
 // You will have time to focus on it later.
 
 (() => {
-    // to get the value of an input: document.getElementById("element-id").value
+  // to get the value of an input: document.getElementById("element-id").value
 
-    const performOperation = operation => {
-        // perform the operation
-    };
+  const performOperation = (operation) => {
+    // perform the operation
+    let firstValue = document.getElementById("op-one");
+    let secondValue = document.getElementById("op-two");
+    let total = 0;
 
-    Array.from(document.querySelectorAll("button.operator")).forEach($btn =>
-        $btn.addEventListener(
-            "click",
-            () => (performOperation($btn.id), false),
-        ),
-    );
+    // Calculate
+    switch (operation) {
+      case "addition":
+        total = parseInt(firstValue.value) + parseInt(secondValue.value);
+        break;
+
+      case "substraction":
+        total = parseInt(firstValue.value) - parseInt(secondValue.value);
+        break;
+
+      case "muktiplication":
+        total = parseInt(firstValue.value) * parseInt(secondValue.value);
+        break;
+
+      case "division":
+        total = (
+          parseInt(firstValue.value) / parseInt(secondValue.value)
+        ).toFixed(1);
+        break;
+
+      default:
+        console.log("Try Again");
+      // code block
+    }
+
+    alert(total);
+  };
+
+  Array.from(document.querySelectorAll("button.operator")).forEach(($btn) =>
+    $btn.addEventListener("click", () => (performOperation($btn.id), false))
+  );
 })();
