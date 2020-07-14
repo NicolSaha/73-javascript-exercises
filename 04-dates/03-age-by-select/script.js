@@ -9,8 +9,32 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // your code here
 
-    // your code here
+  function calculateAge() {
+    todayDate = new Date();
+    todayYear = todayDate.getFullYear();
+    todayMonth = todayDate.getMonth();
+    todayDay = todayDate.getDate();
 
+    let birthDay = document.getElementById("dob-day").value;
+    let birthMonth = document.getElementById("dob-month").value;
+    let birthYear = document.getElementById("dob-year").value;
+
+    age = todayYear - birthYear;
+
+    if (todayMonth < birthMonth - 1) {
+      age--;
+    }
+
+    if (birthMonth - 1 == todayMonth && todayDay < birthDay) {
+      age--;
+    }
+    alert(`${age}`);
+
+    // return age;
+  }
+
+  document.getElementById("run").addEventListener("click", calculateAge());
 })();
