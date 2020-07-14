@@ -44,7 +44,9 @@
 
     let month = months[now.getMonth()];
 
-    document.getElementById("target").innerHTML = `${day}, ${date} ${month}, ${year}, ${hours}h${minutes} `;
+    let result = `${day}, ${date} ${month}, ${year}, ${hours}h${minutes}`;
+
+    document.getElementById("run").addEventListener = ("click", alert("result"));
 
 
 })();
