@@ -18,7 +18,8 @@
     if (n != null && n > 0) {
       var i = 0;
 
-      alert("The first " + n + " numbers and their squares are:");
+      // alert("The first " + n + " numbers and their squares are:");
+      
       for (i = 1; i <= n; i++)
         output += "\n" + i + "*" + i + "=" + i * i + "\n";
       alert(output);
