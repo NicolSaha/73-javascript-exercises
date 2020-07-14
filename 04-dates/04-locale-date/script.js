@@ -18,7 +18,6 @@
     // Time + Date
 
     let now = new Date();
-    let currentDate = document.querySelector("#current-date");
 
     let date = now.getDate();
     let hours = now.getHours();
