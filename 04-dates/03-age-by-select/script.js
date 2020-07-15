@@ -12,7 +12,7 @@
 (function () {
   // your code here
 
-  function calculateAge() {
+  document.getElementById("run").addEventListener("click", function calculateAge() {
     todayDate = new Date();
     todayYear = todayDate.getFullYear();
     todayMonth = todayDate.getMonth();
@@ -31,10 +31,11 @@
     if (birthMonth - 1 == todayMonth && todayDay < birthDay) {
       age--;
     }
+
     alert(`${age}`);
 
     // return age;
-  }
+  });
 
-  document.getElementById("run").addEventListener("click", calculateAge());
+ 
 })();
