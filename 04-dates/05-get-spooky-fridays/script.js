@@ -9,48 +9,52 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  document
+    .getElementById("run")
+    .addEventListener("click", function getLuckyFridayMonths() {
+      let months = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ];
 
-    
-    // your code here
-    document.getElementById("run").addEventListener("click", function dates() {
-       
-        let now = new Date();
-        let date = now.getDate();
-        let year = now.getFullYear();
+      let days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
 
-        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        let day = days[now.getDay()];
+      let sunday = days[0];
+      let input = document.getElementById("year").value;
+      let date = new Date(input);
+      let firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+      firstDayOfMonth = firstDay.getDay();
 
-        let months = [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec",
-        ];
-        let month = months[now.getMonth()];
-
-        let dayOfWeek = 5; //friday
-        let diff = date.getDay() - dayOfWeek;
-        if (diff > 0) {
-            date.setDate(date.getDate() + 6);
+      for (let i = 1; i <= 12; i++) {
+        let month = new Date(`${i} 1, ${input}`);
+        // console.log(month.getDay());
+        if (month.getDay() == 0) {
+        console.log(`${months[i - 1]}`);
+        alert(`${months[i - 1]}`);
+        // How to collect and print together ?
+        } else {
+          console.log("n/a");
         }
-        else if (diff < 0) {
-            date.setDate(date.getDate() + ((-1) * diff));
-        }
-        console.log(date);
-
-       
+        
+      }
     });
-
-    alert("dates()");
-
 })();
