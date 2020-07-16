@@ -44,17 +44,19 @@
       let firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
       firstDayOfMonth = firstDay.getDay();
 
-      for (let i = 1; i <= 12; i++) {
+      let print = [];
+
+      for (let i = 0; i <= 11; i++) {
         let month = new Date(`${i} 1, ${input}`);
-        // console.log(month.getDay());
+
         if (month.getDay() == 0) {
-        console.log(`${months[i - 1]}`);
-        alert(`${months[i - 1]}`);
-        // How to collect and print together ?
+          console.log(`${months[i]}`);
+          // alert(`${months[i]}`);
+          print.push(`${months[i]}`);
         } else {
           console.log("n/a");
         }
-        
       }
+      alert(print);
     });
 })();
