@@ -9,23 +9,26 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  var fruits = [
+    "apple",
+    "peer",
+    "strawberry",
+    "tomato",
+    "kiwi",
+    "banana",
+    "orange",
+    "mandarine",
+    "durian",
+    "peach",
+    "grape",
+    "cherry",
+  ];
 
-    var fruits = [
-        "apple",
-        "peer",
-        "strawberry",
-        "tomato",
-        "kiwi",
-        "banana",
-        "orange",
-        "mandarine",
-        "durian",
-        "peach",
-        "grape",
-        "cherry",
-    ];
-
-    // your code here
-
+  // your code here
+  document.getElementById("run").addEventListener("click", function () {
+    fruits.forEach(function (item) {
+      console.log(item);
+    });
+  });
 })();
