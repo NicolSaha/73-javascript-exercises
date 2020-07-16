@@ -23,9 +23,10 @@
     "cerise",
   ];
 
+  fruits.shift();
+  fruits.pop();
+  fruits.push("kiwi");
+  fruits.unshift("banana");
 
-
-  document
-    .getElementById("run")
-    .addEventListener("click", console.log(fruits.splice(1, 8)));
+  document.getElementById("run").addEventListener("click", console.log(fruits));
 })();
