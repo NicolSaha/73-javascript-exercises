@@ -10,7 +10,13 @@
 // You will have time to focus on it later.
 
 (() => {
+  document.getElementById("run").addEventListener("click", function () {
     const keys = ["name", "species", "age", "gender", "color"];
     const values = ["Skitty", "cat", 9, "female", "tabby"];
     // your code here
+
+    var result = {};
+    keys.forEach((key, i) => (result[key] = values[i]));
+    console.log(result);
+  });
 })();
