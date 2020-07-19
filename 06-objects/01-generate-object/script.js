@@ -10,5 +10,16 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  // your code here
+  const me = {
+    lastname: "Saha",
+    firstname: "Nicole",
+    age: 26,
+    city: "Blankenberge",
+    country: "Belgium",
+  };
+
+  let output = `${me.lastname} ${me.firstname} ${me.age} ${me.city} ${me.country}`;
+
+  console.log(output);
 })();
