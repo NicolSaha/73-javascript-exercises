@@ -21,24 +21,24 @@
     constructor(name) {
       super(Animal);
       this.name = name;
-      this.greeting = "Hi";
     }
+    static greeting = "Hello";
   }
 
   const dogOne = new Dog();
   dogOne.name = "DogName";
-  console.log(`${dogOne.name} ${dogOne.greeting}`);
+  console.log(`${dogOne.sayHello()}`);
+  // console.log(Dog.sayHello());
 
-  /** class Cat extends Animal {
-    constructor(name, greeting) {
-      super(name, greeting);
+  class Cat extends Animal {
+    constructor(name) {
+      super(Animal);
+      this.name = name;
     }
+    static greeting = "Hello";
   }
 
   const catOne = new Cat();
   catOne.name = "CatName";
-  catOne.greeting = "Hi";
-  console.log(`${catOne.name} ${catOne.greeting}`);
-
-   **/
+  console.log(`${catOne.sayHello()}`);
 })();

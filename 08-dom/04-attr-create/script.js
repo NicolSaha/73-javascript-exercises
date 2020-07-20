@@ -11,4 +11,8 @@
 
 (function () {
   // your code here
+
+  document.querySelector("img").addEventListener("mouseover", function () {
+    alert("Hello");
+  });
 })();
