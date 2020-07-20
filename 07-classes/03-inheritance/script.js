@@ -10,10 +10,36 @@
 // You will have time to focus on it later.
 
 (() => {
-    class Animal {
-        sayHello() {
-            return `${this.constructor.greeting}! I'm ${this.name}!`;
-        }
+  class Animal {
+    sayHello(name, greeting) {
+      this.name = name;
+      this.greeting = greeting;
+      return `${this.constructor.greeting}! I'm ${this.name}!`;
     }
-    // your code here
+  }
+  // your code here
+
+  class Dog extends Animal {
+    constructor(name, greeting) {
+      super(name, greeting);
+    }
+  }
+
+  const dogOne = new Dog();
+  dogOne.name = "DogName";
+  dogOne.greeting = "Hi";
+  console.log(`${dogOne.name} ${dogOne.greeting}`);
+
+  class Cat extends Animal {
+    constructor(name, greeting) {
+      super(name, greeting);
+    }
+  }
+
+  const catOne = new Cat();
+  catOne.name = "CatName";
+  catOne.greeting = "Hi";
+  console.log(`${catOne.name} ${catOne.greeting}`);
+
+  //console.log(??);
 })();
