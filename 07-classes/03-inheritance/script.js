@@ -11,26 +11,25 @@
 
 (() => {
   class Animal {
-    sayHello(name, greeting) {
-      this.name = name;
-      this.greeting = greeting;
+    sayHello() {
       return `${this.constructor.greeting}! I'm ${this.name}!`;
     }
   }
   // your code here
 
   class Dog extends Animal {
-    constructor(name, greeting) {
-      super(name, greeting);
+    constructor(name) {
+      super(Animal);
+      this.name = name;
+      this.greeting = "Hi";
     }
   }
 
   const dogOne = new Dog();
   dogOne.name = "DogName";
-  dogOne.greeting = "Hi";
   console.log(`${dogOne.name} ${dogOne.greeting}`);
 
-  class Cat extends Animal {
+  /** class Cat extends Animal {
     constructor(name, greeting) {
       super(name, greeting);
     }
@@ -41,5 +40,5 @@
   catOne.greeting = "Hi";
   console.log(`${catOne.name} ${catOne.greeting}`);
 
-  //console.log(??);
+   **/
 })();
