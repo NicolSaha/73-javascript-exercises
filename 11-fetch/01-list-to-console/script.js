@@ -10,5 +10,25 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  // your code here
+
+  let myInit = {
+    method: "GET",
+    mode: "cors",
+    cache: "default",
+  };
+
+  let myRequest = new Request(
+    "http://localhost:8000/BeCode/Exercises/73-javascript-exercises/_shared/api.json",
+    myInit
+  );
+
+  fetch(myRequest)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(heroes);
+    });
+
+  // .catch((err) => {
+  // console.error("Error: ", err); });
 })();
