@@ -9,8 +9,22 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // your code here
+  document.getElementById("run").addEventListener("click", function () {
+    const passOne = document.querySelector("#pass-one");
+    const passTwo = document.querySelector("#pass-two");
+    const valOne = passOne.value;
+    const valTwo = passTwo.value;
 
-    // your code here
-
+    if (valOne === valTwo) {
+      passOne.style.borderColor = "green";
+      passTwo.style.borderColor = "green";
+      // console.log("Match");
+    } else {
+      passOne.style.borderColor = "red";
+      passTwo.style.borderColor = "red";
+      //  console.log("No Match");
+    }
+  });
 })();
