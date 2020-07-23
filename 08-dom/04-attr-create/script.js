@@ -10,9 +10,11 @@
 // You will have time to focus on it later.
 
 (function () {
-  // your code here
-
-  document.querySelector("img").addEventListener("mouseover", function () {
-    alert("Hello");
-  });
+  const src = document.querySelector("#source");
+  const imgValue = src.getAttribute("data-image");
+  const target = document.querySelector("#target");
+  const image = document.createElement("img");
+  image.setAttribute("src", imgValue);
+  target.appendChild(image);
+  src.remove();
 })();
