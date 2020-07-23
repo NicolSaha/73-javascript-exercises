@@ -9,8 +9,48 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  const table = `<table>
+      <caption>
+       Table
+      </caption>
+      <thead>
+        <tr>
+          <th>Header</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Row 2</td>
+        </tr>
+        <tr>
+          <td>Row 3</td>
+        </tr>
+        <tr>
+          <td>Row 4</td>
+        </tr>
+        <tr>
+          <td>Row 5</td>
+        </tr>
+        <tr>
+          <td>Row 6</td>
+        </tr>
+        <tr>
+          <td>Row 7</td>
+        </tr>
+        <tr>
+          <td>Row 8</td>
+        </tr>
+        <tr>
+          <td>Row 9</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Footer</td>
+        </tr>
+      </tfoot>
+    </table>`;
 
-    // your code here
-
+  document.querySelector("#target").innerHTML = table;
 })();
