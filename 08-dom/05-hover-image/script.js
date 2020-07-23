@@ -9,8 +9,15 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  const image = document.querySelector(".material img");
+  const source = image.getAttribute("src");
+  const attr = image.getAttribute("data-hover");
 
-    // your code here
-
+  image.onmouseover = () => {
+    image.setAttribute("src", attr);
+  };
+  image.onmouseleave = () => {
+    image.setAttribute("src", source);
+  };
 })();
