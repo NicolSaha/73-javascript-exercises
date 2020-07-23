@@ -19,7 +19,7 @@
   };
 
   let myRequest = new Request(
-    "http://localhost:8000/BeCode/Exercises/73-javascript-exercises/_shared/api.json",
+    "http://localhost:8000/BeCode/Exercises/73-javascript-exercises/shared/api.json",
     myInit
   );
 
