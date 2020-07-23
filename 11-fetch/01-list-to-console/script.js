@@ -11,24 +11,25 @@
 
 (() => {
   // your code here
+  document.getElementById("run").addEventListener("click", function () {
+    let myInit = {
+      method: "GET",
+      mode: "cors",
+      cache: "default",
+    };
 
-  let myInit = {
-    method: "GET",
-    mode: "cors",
-    cache: "default",
-  };
+    let myRequest = new Request(
+      "/Exercises/73-javascript-exercises/shared/api.json",
+      myInit
+    );
 
-  let myRequest = new Request(
-    "http://localhost:8000/BeCode/Exercises/73-javascript-exercises/shared/api.json",
-    myInit
-  );
+    fetch(myRequest)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
 
-  fetch(myRequest)
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(heroes);
-    });
-
-  // .catch((err) => {
-  // console.error("Error: ", err); });
+    // .catch((err) => {
+    // console.error("Error: ", err); });
+  });
 })();
