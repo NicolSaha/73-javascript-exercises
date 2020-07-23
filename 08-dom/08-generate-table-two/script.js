@@ -9,8 +9,28 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  const col = 10;
+  const row = 10;
+  let table = "";
 
-    // your code here
+  for (let r = 1; r < row + 1; r++) {
+    table += `<tr>`;
 
+    for (let c = 1; c < col + 1; c++) {
+      table += `<td>${r * c}</td>`;
+    }
+    table += `</tr>`;
+  }
+
+  const tablePrint = `<table>
+      <caption>
+        Multiplication
+      </caption>
+      <tbody>
+        ${table}
+      </tbody>
+    </table>`;
+
+  document.querySelector("#target").innerHTML = tablePrint;
 })();
