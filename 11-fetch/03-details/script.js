@@ -38,9 +38,6 @@
 
         console.log(arr[inputNumber].id);
         arr.forEach((xmen) => {
-          // let hero = arr[inputNumber];
-          // console.log(hero.id);
-          // console.log(Number(inputNumber) + Number(1));
           let value = Number(inputNumber) + Number(1);
           if (xmen.id === value) {
             let clone = template.content.cloneNode(true);
