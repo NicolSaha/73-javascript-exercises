@@ -25,7 +25,8 @@
     );
 
     let input = document.getElementById("hero-id").value;
-    let inputNumber = Number(input);
+    // console.log( input);
+    let inputNumber = Number(input - 1);
     console.log(inputNumber);
 
     fetch(myRequest)
@@ -33,25 +34,27 @@
       .then((data) => {
         console.table(Object.values(data.heroes));
         let arr = Object.values(data.heroes);
-
         let template = document.getElementById("tpl-hero");
-        for (i = 0; i < arr.length; i++) {
-          //  if (i == inputNumber) {
-          let hero = arr[i];
-          let clone = template.content.cloneNode(true);
-          let name = clone.querySelectorAll(".name");
-          let alterego = clone.querySelectorAll(".alter-ego");
-          let powers = clone.querySelectorAll(".powers");
-          name[i].innerHTML = hero.name;
-          alterego[i].innerHTML = hero.alterEgo;
-          powers[i].innerHTML = hero.abilities;
-          template.parentNode.appendChild(clone);
-          //  } else {
-          //     console.log("Try again");
-          //  }
-        }
+
+        console.log(arr[inputNumber].id);
+        arr.forEach(() => {
+          // let hero = arr[inputNumber];
+          // console.log(hero.id);
+          // console.log(Number(inputNumber) + Number(1));
+          let value = Number(inputNumber) + Number(1);
+          if (arr[inputNumber].id === value) {
+            let clone = template.content.cloneNode(true);
+            let name = clone.querySelector(".name");
+            let alterego = clone.querySelector(".alter-ego");
+            let powers = clone.querySelector(".powers");
+            name.innerHTML = arr[inputNumber].name;
+            alterego.innerHTML = arr[inputNumber].alterEgo;
+            powers.innerHTML = arr[inputNumber].abilities;
+            template.parentNode.appendChild(clone);
+          } else {
+            console.log("Try Again");
+          }
+        });
       });
   });
 })();
-
-// ID BUG
