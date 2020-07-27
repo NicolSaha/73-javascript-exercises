@@ -28,17 +28,20 @@
       .then((data) => {
         console.table(Object.values(data.heroes));
         let arr = Object.values(data.heroes);
-        //let arrLength = arr.length + 1;
-        let heroName = document.getElementById("hero-name");
-        let heroAlterEgo = document.getElementById("hero-alter-ego");
-        let heroPowers = document.getElementById("hero-powers");
+        let heroName = document.getElementById("hero-name").value;
+        let heroAlterEgo = document.getElementById("hero-alter-ego").value;
+        let heroPowers = [document.getElementById("hero-powers").value];
 
         // console.log(arr[arrLength].name);
 
-        arr.push(heroName);
-        arr.push(heroAlterEgo);
-        arr.push(heroPowers);
+        let newHero = {
+          id: Number(`${arr.length + 1}`),
+          name: heroName,
+          alterEgo: heroAlterEgo,
+          abilities: heroPowers,
+        };
 
+        arr.push(newHero);
         console.log(arr);
       });
   });
