@@ -37,12 +37,12 @@
         let template = document.getElementById("tpl-hero");
 
         console.log(arr[inputNumber].id);
-        arr.forEach(() => {
+        arr.forEach((xmen) => {
           // let hero = arr[inputNumber];
           // console.log(hero.id);
           // console.log(Number(inputNumber) + Number(1));
           let value = Number(inputNumber) + Number(1);
-          if (arr[inputNumber].id === value) {
+          if (xmen.id === value) {
             let clone = template.content.cloneNode(true);
             let name = clone.querySelector(".name");
             let alterego = clone.querySelector(".alter-ego");
