@@ -36,7 +36,6 @@
         let arr = Object.values(data.heroes);
         let template = document.getElementById("tpl-hero");
 
-        console.log(arr[inputNumber].id);
         arr.forEach((xmen) => {
           let value = Number(inputNumber) + Number(1);
           if (xmen.id === value) {
@@ -52,6 +51,11 @@
             console.log("Try Again");
           }
         });
+
+        setTimeout(function () {
+          window.location.reload(1);
+        }, 60000);
+        setTimeout();
       });
   });
 })();
