@@ -9,8 +9,27 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // your code here
 
-    // your code here
+  // Get Elements
+  const target = document.querySelector("#target");
+  const increment = document.querySelector("#increment");
 
+  // Numbers
+  let savedNumber = localStorage.getItem("number");
+  let number = target.textContent;
+
+  // Get Number
+  if (savedNumber !== null) {
+    number = savedNumber;
+  }
+  target.textContent = number;
+
+  // Click
+  increment.onclick = () => {
+    number++;
+    target.textContent = number;
+    localStorage.setItem("number", number);
+  };
 })();
