@@ -14,16 +14,14 @@
 
   // Random number between 1 & 100
   const randomNumber = ~~(Math.random() * 100) + 1;
+  const target = document.querySelector(".target");
+  // User Input
+  const input = Number(document.querySelector("#input").value);
+
+  // Count
+  let count = 0;
 
   document.querySelector("#run").onclick = () => {
-    const target = document.querySelector(".target");
-
-    // User Input
-    const input = Number(document.querySelector("#input").value);
-
-    // Count
-    let count = 0;
-
     // Check Guess
 
     if (input === randomNumber) {
