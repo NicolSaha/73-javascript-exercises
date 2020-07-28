@@ -14,10 +14,10 @@
 
   // Get Targets
   const target = document.querySelector("#target");
-  const partOne = document.querySelector("#part-One");
-  const partTwo = document.querySelector("#part-Two");
-  const partThree = document.querySelector("#part-Three");
-  const partFour = document.querySelector("#part-Four");
+  const partOne = document.querySelector("#part-one");
+  const partTwo = document.querySelector("#part-two");
+  const partThree = document.querySelector("#part-three");
+  const partFour = document.querySelector("#part-four");
 
   // Get Min & Max Values
   const min1 = partOne.getAttribute("data-min");
@@ -29,37 +29,74 @@
   const min4 = partFour.getAttribute("data-min");
   const max4 = partFour.getAttribute("data-max");
 
+  // Set Start Values
+  let start1 = min1;
+  let start2 = min2;
+  let start3 = min3;
+  let start4 = min4;
+
   // Button Click 1
   partOne.onclick = () => {
- 
-    // 
+    if (start1 > max1) {
+      start1 = min1;
+    }
+    console.log(start1);
 
-    partOne.textContent = ??;
-    target.textContent = ??;
+    start1++;
+
+    if (start1 < 10) {
+      start1 = `0${start1}`;
+    }
+
+    partOne.textContent = start1;
+    target.textContent = `+0${start1}${start2}${start3}${start4}`;
   };
 
-// Button Click 2
+  // Button Click 2
   partTwo.onclick = () => {
-    //
-    
-    partTwo.textContent = ??;
-    target.textContent = ??;
+    if (start2 > max2) {
+      start2 = min2;
+    }
+
+    start2++;
+
+    if (start2 < 10) {
+      start2 = `0${start2}`;
+    }
+
+    partTwo.textContent = start2;
+    target.textContent = `+0${start1}${start2}${start3}${start4}`;
   };
 
   // Button Click 3
   partThree.onclick = () => {
-   
-    //
+    if (start3 > max3) {
+      start3 = min3;
+    }
 
-    partThree.textContent = ??;
-    target.textContent = ??;
+    start3++;
+
+    if (start3 < 10) {
+      start3 = `0${start3}`;
+    }
+
+    partThree.textContent = start3;
+    target.textContent = `+0${start1}${start2}${start3}${start4}`;
   };
 
   // Button Click 4
   partFour.onclick = () => {
-   //
+    if (start4 > max4) {
+      start4 = min4;
+    }
 
-    partFour.textContent = i??;
-    target.textContent = ??;
+    start4++;
+
+    if (start4 < 10) {
+      start4 = `0${start4}`;
+    }
+
+    partFour.textContent = start4;
+    target.textContent = `+0${start1}${start2}${start3}${start4}`;
   };
 })();
