@@ -25,6 +25,7 @@
       ` /Exercises/73-javascript-exercises/shared/api.json/heroes/${id}`,
       options
     );
+    // CHANGE CALL API NEEDED
 
     console.log(del);
 
