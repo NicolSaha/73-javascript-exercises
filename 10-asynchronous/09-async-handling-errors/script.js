@@ -10,5 +10,17 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  // your code here
+  document.querySelector("#run").onclick = () => {
+    window.lib.getPersons().then(person).catch(error);
+  };
+
+  async function person(persons) {
+    await persons;
+    console.log(persons);
+  }
+  async function error(error) {
+    await error;
+    console.error(error);
+  }
 })();
