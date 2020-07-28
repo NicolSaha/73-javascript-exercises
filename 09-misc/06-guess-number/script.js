@@ -9,8 +9,40 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+  // your code here
 
-    // your code here
+  // Random number between 1 & 100
+  const randomNumber = ~~(Math.random() * 100) + 1;
 
+  document.querySelector("#run").onclick = () => {
+    const target = document.querySelector(".target");
+
+    // User Input
+    const input = Number(document.querySelector("#input").value);
+
+    // Count
+    let count = 0;
+
+    // Check Guess
+
+    if (input === randomNumber) {
+      count++;
+      target.textContent = `That's right! You did it in ${
+        count === 1 ? count + " time" : count + " times"
+      }!`;
+    } else {
+      count++;
+      if (input > randomNumber) {
+        target.textContent = "Too High!";
+      } else {
+        target.textContent = "Too Low!";
+      }
+
+      // Logs
+      console.log(randomNumber, "Random Number");
+      console.log(input, "User Input");
+      console.log(count, "Amount of guesses");
+    }
+  };
 })();
