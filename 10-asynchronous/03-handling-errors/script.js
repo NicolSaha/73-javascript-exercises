@@ -10,5 +10,17 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  // your code here
+
+  document.querySelector("#run").onclick = () => {
+    window.lib.getPersons(callback);
+  };
+
+  function callback(error, people) {
+    if (error) {
+      console.error(error);
+    } else {
+      console.log(people);
+    }
+  }
 })();
