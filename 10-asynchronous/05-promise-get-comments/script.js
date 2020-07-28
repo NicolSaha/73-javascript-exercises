@@ -10,5 +10,26 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  // your code here
+
+  document.querySelector("#run").onclick = () => {
+    window.lib.getPosts().then(addComments).catch(error);
+  };
+
+  function addComments(articles) {
+    for (const obj in articles) {
+      const id = articles[obj].id;
+
+      window.lib
+        .getComments(id)
+        .then((comments) => {
+          articles[obj].comments = comments;
+        })
+        .catch(error);
+    }
+    console.log(articles);
+  }
+  function error(error) {
+    console.log(error);
+  }
 })();
