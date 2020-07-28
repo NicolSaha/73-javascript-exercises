@@ -11,4 +11,15 @@
 
 (function () {
   // your code here
+
+  const text = document.getElementById("target").innerHTML;
+  console.log(text);
+
+  for (i = 0; i < text.length; i++) {
+   let result = text.charAt(i).fontsize(Math.round(5 + 15 * (i / 10 - Math.floor(i / 10))));
+  }
+
+  console.log(result);
+
+  document.getElementById("target").innerHTML = `${result}`;
 })();
