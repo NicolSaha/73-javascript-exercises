@@ -10,5 +10,29 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  function getPosts(error, articles) {
+    if (error) {
+      console.error(error);
+      return;
+    }
+
+    for (let i = 0; i < articles.length; i++) {
+      let article = articles[i];
+      let id = article.id;
+
+      window.lib.getComments(id, (error, comments) => {
+        if (error) {
+          console.error(error);
+        } else {
+          article["comments"] = comments;
+        }
+      });
+    }
+
+    console.log(articles);
+  }
+
+  document.querySelector("#run").onclick = () => {
+    window.lib.getPosts(getPosts);
+  };
 })();
