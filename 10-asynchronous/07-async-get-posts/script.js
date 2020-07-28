@@ -10,5 +10,17 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  // your code here
+  document.querySelector("#run").onclick = () => {
+    window.lib.getPosts().then(getPosts).catch(error);
+  };
+
+  async function getPosts(articles) {
+    await articles;
+    console.log(articles);
+  }
+  async function error(error) {
+    await error;
+    console.error(error);
+  }
 })();
