@@ -10,5 +10,11 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+  // your code here
+  document.querySelector("#run").onclick = () => {
+    window.lib
+      .getPersons()
+      .then((persons) => console.log(persons))
+      .catch((error) => console.error(error));
+  };
 })();
